@@ -4,6 +4,13 @@ import 'light_color.dart';
 
 class AppTheme {
   const AppTheme();
+  static BoxDecoration mainContainerDesign = BoxDecoration(
+    borderRadius: BorderRadius.circular(10),
+    color: Colors.white,
+    boxShadow: const [
+      BoxShadow(color: Color.fromARGB(20, 0, 0, 19),blurRadius: 5, spreadRadius: 3),
+    ],
+  );
   static ThemeData lightTheme = ThemeData(
       backgroundColor: LightColor.background,
       primaryColor: LightColor.background,
@@ -12,8 +19,8 @@ class AppTheme {
       iconTheme: const IconThemeData(color: LightColor.iconColor),
       bottomAppBarColor: LightColor.background,
       dividerColor: LightColor.lightGrey,
-      primaryTextTheme:
-          const TextTheme(bodyText1: TextStyle(color: LightColor.titleTextColor)));
+      primaryTextTheme: const TextTheme(
+          bodyText1: TextStyle(color: LightColor.titleTextColor)));
 
   static TextStyle titleStyle =
       const TextStyle(color: LightColor.titleTextColor, fontSize: 16);
@@ -31,9 +38,13 @@ class AppTheme {
   static List<BoxShadow> shadow = <BoxShadow>[
     const BoxShadow(color: Color(0xfff8f8f8), blurRadius: 10, spreadRadius: 15),
   ];
-
+  static EdgeInsets alPadding =
+      const EdgeInsets.all(5);
   static EdgeInsets padding =
-      const EdgeInsets.symmetric(horizontal: 20, vertical: 10);
+      const EdgeInsets.symmetric(horizontal: 10, vertical: 10);
+        static EdgeInsets marginAll =
+      const EdgeInsets.all(20);
+  static EdgeInsets paddingLeft = const EdgeInsets.only(left: 10);
   static EdgeInsets hPadding = const EdgeInsets.symmetric(
     horizontal: 10,
   );
@@ -45,4 +56,8 @@ class AppTheme {
   static double fullHeight(BuildContext context) {
     return MediaQuery.of(context).size.height;
   }
+
+  static Border borderappbar = const Border(
+    bottom: BorderSide(width: 0.4, color: Color(0xffAAAFB2)),
+  );
 }
